@@ -1,13 +1,12 @@
 # Certify
-Certify creates and self-signs X.509 SSL/TLS certificates with the "subjectAltName" extension.
+
+**Create self-signed X.509 SSL/TLS certificates with the "subjectAltName" extension.**
 
 ## Introduction
 
-**First things first: if you want a SSL/TLS certificate for use on a public-facing https website, go to one of the [many vendors](https://www.sslshopper.com/ssl-certificate-list.html) and buy one. That is currently the only way to reliably authenticate and encrypt your website for your visitors.**
+The security of the web's Public Key Infrastructure is [being heavily criticised](http://www.thoughtcrime.org/blog/ssl-and-the-future-of-authenticity/). Some even claim that [OpenSSH is written by monkeys](https://www.peereboom.us/assl/assl/html/openssl.html). But until [something better comes along](https://letsencrypt.org/) you'll just have to swallow it and pay money to the big boys to be protected.
 
-The actual security of the web's Public Key Infrastructure is [being heavily criticised](http://www.thoughtcrime.org/blog/ssl-and-the-future-of-authenticity/). Some even claim that [OpenSSH is written by monkeys](https://www.peereboom.us/assl/assl/html/openssl.html). But until [something better comes along](https://letsencrypt.org/) you'll just have to swallow it and pay money to the big boys to be protected.
-
-With all that said, for small, personal projects [it's better to have a self-signed certificate than no certificate at all](http://serverfault.com/questions/279780/is-a-self-signed-ssl-certificate-a-false-sense-of-security). Once your browser has a legit copy of the self-signed certificate, you can securely access the website over an encrypted TLS connection. With governments controlling root certificate authorities, some even argue that a securely distributed self-signed certificate is [more secure than a paid certificate](http://security.stackexchange.com/questions/42409/are-self-signed-certificates-actually-more-secure-than-ca-signed-certificates-now). At a mininum, a self-signed certificate successfully avoids sending passwords in clear text.
+In any case, [it's better to have a self-signed certificate than no certificate at all](http://serverfault.com/questions/279780/is-a-self-signed-ssl-certificate-a-false-sense-of-security). Once your browser has a legit copy of the self-signed certificate, you can securely access the website over an encrypted TLS connection. With governments controlling root certificate authorities, it can be argued that a securely distributed self-signed certificate is [more secure than a paid certificate](http://security.stackexchange.com/questions/42409/are-self-signed-certificates-actually-more-secure-than-ca-signed-certificates-now). At a mininum, a self-signed certificate successfully avoids sending passwords in clear text.
 
 ## Self-signing using `openssl`
 
